@@ -1,6 +1,7 @@
 package com.besson.tutorial.item;
 
 import com.besson.tutorial.TutorialMod;
+import com.besson.tutorial.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -21,6 +22,9 @@ public class ModCreativeModeTabs {
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModItems.ICE_ETHER.get());
                         pOutput.accept(ModItems.RAW_ICE_ETHER.get());
+                        pOutput.accept(ModBlocks.ICE_ETHER_BLOCK.get());
+                        pOutput.accept(ModBlocks.ICE_ETHER_ORE.get());
+                        pOutput.accept(ModBlocks.RAW_ICE_ETHER_BLOCK.get());
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> MATERIAL =
