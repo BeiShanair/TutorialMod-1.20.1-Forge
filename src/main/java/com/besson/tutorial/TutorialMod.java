@@ -1,7 +1,9 @@
 package com.besson.tutorial;
 
+import com.besson.tutorial.item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -32,6 +34,7 @@ public class TutorialMod
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
+        ModItems.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -59,7 +62,11 @@ public class TutorialMod
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.ICE_ETHER);
+            event.accept(ModItems.RAW_ICE_ETHER);
+            event.accept(ModItems.CARDBOARD);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
