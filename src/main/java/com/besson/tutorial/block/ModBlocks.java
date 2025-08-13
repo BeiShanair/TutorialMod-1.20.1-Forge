@@ -19,7 +19,8 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, TutorialMod.MOD_ID);
 
     public static final RegistryObject<Block> ICE_ETHER_BLOCK =
-            registerBlock("ice_ether_block", () -> new Block(BlockBehaviour.Properties.of().strength(1.5F, 3.0F)));
+            registerBlock("ice_ether_block", () -> new Block(BlockBehaviour.Properties.of().strength(1.5F, 3.0F)
+                    .requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> RAW_ICE_ETHER_BLOCK =
             registerBlock("raw_ice_ether_block", () -> new Block(BlockBehaviour.Properties.of().strength(1.5F, 3.0F)));
     public static final RegistryObject<Block> ICE_ETHER_ORE =
