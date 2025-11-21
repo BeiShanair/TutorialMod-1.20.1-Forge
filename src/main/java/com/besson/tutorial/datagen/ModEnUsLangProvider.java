@@ -23,6 +23,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
 
         add(ModItems.ANTHRACITE.get(), "Anthracite");
 
+        add(ModItems.PROSPECTOR.get(), "Prospector");
+
         add(ModBlocks.ICE_ETHER_BLOCK.get(), "Ice Ether Block");
         add(ModBlocks.RAW_ICE_ETHER_BLOCK.get(), "Raw Ice Ether Block");
         add(ModBlocks.ICE_ETHER_ORE.get(), "Ice Ether Ore");

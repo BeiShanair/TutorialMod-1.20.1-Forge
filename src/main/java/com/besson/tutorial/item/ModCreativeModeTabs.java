@@ -31,6 +31,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.CHEESE.get());
 
                         pOutput.accept(ModItems.ANTHRACITE.get());
+                        pOutput.accept(ModItems.PROSPECTOR.get());
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> MATERIAL =
