@@ -1,4 +1,5 @@
-// 1.20.1	2025-12-05T23:06:03.0357995	Tags for minecraft:block mod id tutorial_mod
+// 1.20.1	2025-12-06T00:06:18.0175748	Tags for minecraft:block mod id tutorial_mod
+f3e660e89a1134f382a8b3f42bce0dc91d88fe6d data/forge/tags/blocks/tools/pickaxe_axe_mineable.json
 4a397b9d573a53d13c9ca92937e176808741c244 data/minecraft/tags/blocks/fences.json
 f18eed9602334b4dbf27e466d682d3fbaeed8697 data/minecraft/tags/blocks/fence_gates.json
 a59c02732689bf7eef138e44f2f968e6bbd053eb data/minecraft/tags/blocks/mineable/pickaxe.json

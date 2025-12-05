@@ -43,5 +43,9 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.ICE_ETHER_FENCE_GATE.get());
         tag(BlockTags.WALLS)
                 .add(ModBlocks.ICE_ETHER_WALL.get());
+
+        tag(ModBlockTags.PICKAXE_AXE_MINEABLE)
+                .addTag(BlockTags.MINEABLE_WITH_AXE)
+                .addTag(BlockTags.MINEABLE_WITH_PICKAXE);
     }
 }

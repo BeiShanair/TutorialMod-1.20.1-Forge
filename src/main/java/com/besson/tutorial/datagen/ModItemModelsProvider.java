@@ -42,6 +42,8 @@ public class ModItemModelsProvider extends ItemModelProvider {
         handheldItem(ModItems.FIRE_ETHER_AXE);
         handheldItem(ModItems.FIRE_ETHER_PICKAXE);
         handheldItem(ModItems.FIRE_ETHER_SHOVEL);
+
+        handheldItem(ModItems.PICKAXE_AXE_ITEM);
     }
     private <T extends Block> void buttonItem(RegistryObject<T> block, RegistryObject<Block> base) {
         this.withExistingParent(block.getId().getPath(), mcLoc("block/button_inventory"))
