@@ -1,6 +1,7 @@
 package com.besson.tutorial.item;
 
 import com.besson.tutorial.TutorialMod;
+import com.besson.tutorial.item.custom.CustomArmorItem;
 import com.besson.tutorial.item.custom.ModFuelItem;
 import com.besson.tutorial.item.custom.PickaxeAxeItem;
 import com.besson.tutorial.item.custom.ProspectorItem;
@@ -51,7 +52,7 @@ public class ModItems {
             () -> new PickaxeAxeItem(ModToolTiers.FIRE_ETHER, 6.0F, -2.8F, new Item.Properties().fireResistant()));
 
     public static final RegistryObject<Item> ICE_ETHER_HELMET = ITEMS.register("ice_ether_helmet",
-            () -> new ArmorItem(ModArmorMaterials.ICE_ETHER, ArmorItem.Type.HELMET, new Item.Properties()));
+            () -> new CustomArmorItem(ModArmorMaterials.ICE_ETHER, ArmorItem.Type.HELMET, new Item.Properties()));
     public static final RegistryObject<Item> ICE_ETHER_CHESTPLATE = ITEMS.register("ice_ether_chestplate",
             () -> new ArmorItem(ModArmorMaterials.ICE_ETHER, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
     public static final RegistryObject<Item> ICE_ETHER_LEGGINGS = ITEMS.register("ice_ether_leggings",
