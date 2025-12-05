@@ -42,6 +42,12 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.ICE_ETHER_WALL.get());
                         pOutput.accept(ModBlocks.ICE_ETHER_DOOR.get());
                         pOutput.accept(ModBlocks.ICE_ETHER_TRAPDOOR.get());
+
+                        pOutput.accept(ModItems.FIRE_ETHER_SWORD.get());
+                        pOutput.accept(ModItems.FIRE_ETHER_SHOVEL.get());
+                        pOutput.accept(ModItems.FIRE_ETHER_PICKAXE.get());
+                        pOutput.accept(ModItems.FIRE_ETHER_AXE.get());
+                        pOutput.accept(ModItems.FIRE_ETHER_HOE.get());
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> MATERIAL =

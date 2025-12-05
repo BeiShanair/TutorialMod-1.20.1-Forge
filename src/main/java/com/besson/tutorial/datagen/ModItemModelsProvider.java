@@ -5,7 +5,9 @@ import com.besson.tutorial.block.ModBlocks;
 import com.besson.tutorial.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
@@ -34,6 +36,12 @@ public class ModItemModelsProvider extends ItemModelProvider {
         wallItem(ModBlocks.ICE_ETHER_WALL, ModBlocks.ICE_ETHER_BLOCK);
 
         basicItem(ModBlocks.ICE_ETHER_DOOR.get().asItem());
+
+        handheldItem(ModItems.FIRE_ETHER_SWORD);
+        handheldItem(ModItems.FIRE_ETHER_HOE);
+        handheldItem(ModItems.FIRE_ETHER_AXE);
+        handheldItem(ModItems.FIRE_ETHER_PICKAXE);
+        handheldItem(ModItems.FIRE_ETHER_SHOVEL);
     }
     private <T extends Block> void buttonItem(RegistryObject<T> block, RegistryObject<Block> base) {
         this.withExistingParent(block.getId().getPath(), mcLoc("block/button_inventory"))
@@ -49,5 +57,11 @@ public class ModItemModelsProvider extends ItemModelProvider {
         this.withExistingParent(block.getId().getPath(), mcLoc("block/wall_inventory"))
                 .texture("wall", ResourceLocation.fromNamespaceAndPath(TutorialMod.MOD_ID,
                         "block/" + base.getId().getPath()));
+    }
+
+    private ItemModelBuilder handheldItem(RegistryObject<Item> item) {
+        return withExistingParent(item.getId().getPath(),
+                ResourceLocation.withDefaultNamespace("item/handheld")).texture("layer0",
+                ResourceLocation.fromNamespaceAndPath(TutorialMod.MOD_ID,"item/" + item.getId().getPath()));
     }
 }
