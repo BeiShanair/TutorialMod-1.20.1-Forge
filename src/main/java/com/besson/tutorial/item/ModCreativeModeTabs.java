@@ -32,6 +32,16 @@ public class ModCreativeModeTabs {
 
                         pOutput.accept(ModItems.ANTHRACITE.get());
                         pOutput.accept(ModItems.PROSPECTOR.get());
+
+                        pOutput.accept(ModBlocks.ICE_ETHER_STAIRS.get());
+                        pOutput.accept(ModBlocks.ICE_ETHER_SLAB.get());
+                        pOutput.accept(ModBlocks.ICE_ETHER_BUTTON.get());
+                        pOutput.accept(ModBlocks.ICE_ETHER_PRESSURE_PLATE.get());
+                        pOutput.accept(ModBlocks.ICE_ETHER_FENCE.get());
+                        pOutput.accept(ModBlocks.ICE_ETHER_FENCE_GATE.get());
+                        pOutput.accept(ModBlocks.ICE_ETHER_WALL.get());
+                        pOutput.accept(ModBlocks.ICE_ETHER_DOOR.get());
+                        pOutput.accept(ModBlocks.ICE_ETHER_TRAPDOOR.get());
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> MATERIAL =
