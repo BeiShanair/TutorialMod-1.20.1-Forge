@@ -1,4 +1,4 @@
-// 1.20.1	2025-12-06T00:37:10.8971914	Item Models: tutorial_mod
+// 1.20.1	2026-03-04T12:56:21.6381557	Item Models: tutorial_mod
 30f5da21ac3a5e5bd5779568e1cc423842be68bf assets/tutorial_mod/models/item/anthracite.json
 bfaf0c5d04ab56420b9d11e09063213df335aced assets/tutorial_mod/models/item/cheese.json
 33609bc3e6d18bd10b344c3b4f5d1e6af110b001 assets/tutorial_mod/models/item/corn.json
@@ -20,3 +20,4 @@ bfc36e06ab35d0b5d085a88db42950cdeb3e71ee assets/tutorial_mod/models/item/ice_eth
 7603d1f75f5a81e8aac57e1e4e3e09abb4f8c6ca assets/tutorial_mod/models/item/prospector.json
 1b747314c4a75e6adcc337f5e225fe7c653e326b assets/tutorial_mod/models/item/raw_ice_ether.json
 8dae9764ab14dc81f09b2e3416e3fd962e32dc30 assets/tutorial_mod/models/item/strawberry.json
+20642b548d1b508329ad36874ae62f87da0f1ff7 assets/tutorial_mod/models/item/strawberry_seeds.json

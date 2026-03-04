@@ -49,6 +49,8 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.ICE_ETHER_CHESTPLATE.get());
         basicItem(ModItems.ICE_ETHER_LEGGINGS.get());
         basicItem(ModItems.ICE_ETHER_BOOTS.get());
+
+        basicItem(ModItems.STRAWBERRY_SEEDS.get());
     }
     private <T extends Block> void buttonItem(RegistryObject<T> block, RegistryObject<Block> base) {
         this.withExistingParent(block.getId().getPath(), mcLoc("block/button_inventory"))

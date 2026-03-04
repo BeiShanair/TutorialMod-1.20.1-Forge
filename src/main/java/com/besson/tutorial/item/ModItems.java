@@ -1,6 +1,7 @@
 package com.besson.tutorial.item;
 
 import com.besson.tutorial.TutorialMod;
+import com.besson.tutorial.block.ModBlocks;
 import com.besson.tutorial.item.custom.CustomArmorItem;
 import com.besson.tutorial.item.custom.ModFuelItem;
 import com.besson.tutorial.item.custom.PickaxeAxeItem;
@@ -59,6 +60,9 @@ public class ModItems {
             () -> new ArmorItem(ModArmorMaterials.ICE_ETHER, ArmorItem.Type.LEGGINGS, new Item.Properties()));
     public static final RegistryObject<Item> ICE_ETHER_BOOTS = ITEMS.register("ice_ether_boots",
             () -> new ArmorItem(ModArmorMaterials.ICE_ETHER, ArmorItem.Type.BOOTS, new Item.Properties()));
+
+    public static final RegistryObject<Item> STRAWBERRY_SEEDS = ITEMS.register("strawberry_seeds",
+            () -> new ItemNameBlockItem(ModBlocks.STRAWBERRY_CROP.get(), new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
