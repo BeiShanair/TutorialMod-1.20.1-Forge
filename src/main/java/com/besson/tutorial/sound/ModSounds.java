@@ -20,6 +20,8 @@ public class ModSounds {
     public static final RegistryObject<SoundEvent> BLOCK_FALL = registerSoundEvent("block_fall");
     public static final RegistryObject<SoundEvent> BLOCK_STEP = registerSoundEvent("block_step");
     
+    public static final RegistryObject<SoundEvent> A_MOMENT_APART = registerSoundEvent("a_moment_apart");
+    
     public static final ForgeSoundType BLOCK_SOUNDS = new ForgeSoundType(1.0f, 1.0f,
             BLOCK_BREAK, BLOCK_STEP, BLOCK_PLACE, BLOCK_HIT, BLOCK_FALL);
     private static RegistryObject<SoundEvent> registerSoundEvent(String name) {

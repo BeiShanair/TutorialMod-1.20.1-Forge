@@ -57,6 +57,8 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.ICE_ETHER_BOOTS.get());
 
                         pOutput.accept(ModItems.STRAWBERRY_SEEDS.get());
+                        
+                        pOutput.accept(ModItems.A_MOMENT_APART_MUSIC_DISC.get());
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> MATERIAL =

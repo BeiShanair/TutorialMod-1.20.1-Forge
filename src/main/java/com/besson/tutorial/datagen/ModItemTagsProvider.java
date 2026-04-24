@@ -29,5 +29,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                         ModItems.ICE_ETHER_CHESTPLATE.get(),
                         ModItems.ICE_ETHER_LEGGINGS.get(),
                         ModItems.ICE_ETHER_BOOTS.get());
+        tag(ItemTags.MUSIC_DISCS)
+                .add(ModItems.A_MOMENT_APART_MUSIC_DISC.get());
     }
 }
