@@ -3,6 +3,7 @@ package com.besson.tutorial;
 import com.besson.tutorial.block.ModBlocks;
 import com.besson.tutorial.item.ModCreativeModeTabs;
 import com.besson.tutorial.item.ModItems;
+import com.besson.tutorial.sound.ModSounds;
 import com.besson.tutorial.villager.ModVillagers;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
@@ -43,6 +44,7 @@ public class TutorialMod
         ModBlocks.register(modEventBus);
 
         ModVillagers.register(modEventBus);
+        ModSounds.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
