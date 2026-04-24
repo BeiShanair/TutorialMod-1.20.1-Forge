@@ -3,6 +3,7 @@ package com.besson.tutorial;
 import com.besson.tutorial.block.ModBlocks;
 import com.besson.tutorial.item.ModCreativeModeTabs;
 import com.besson.tutorial.item.ModItems;
+import com.besson.tutorial.villager.ModVillagers;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -36,10 +37,12 @@ public class TutorialMod
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
-
+        
         ModItems.register(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
         ModBlocks.register(modEventBus);
+
+        ModVillagers.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
