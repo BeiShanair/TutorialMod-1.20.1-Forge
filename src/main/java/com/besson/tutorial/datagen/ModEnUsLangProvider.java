@@ -71,5 +71,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         
         add(ModItems.A_MOMENT_APART_MUSIC_DISC.get(), "Music Disc");
         add(ModItems.A_MOMENT_APART_MUSIC_DISC.get().getDescriptionId() + ".desc", "A Moment Apart");
+
+        add(ModItems.BASEBALL_BAT.get(), "Baseball Bat");
+        add(ModBlocks.ORANGE_NIGHTSTAND.get(), "Orange Nightstand");
     }
 }

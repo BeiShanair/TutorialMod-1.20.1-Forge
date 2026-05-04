@@ -48,6 +48,14 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         crop(ModBlocks.STRAWBERRY_CROP.get(), "strawberry_crop_stage", StrawberryCrop.AGE);
         crossCrop(ModBlocks.CORN_CROP.get(), "corn_crop_stage", CornCrop.AGE);
+
+        simpleBlockWithoutBlockModel(ModBlocks.ORANGE_NIGHTSTAND);
+    }
+
+    private <T extends Block> void simpleBlockWithoutBlockModel(RegistryObject<T> block) {
+        ResourceLocation model = modLoc("block/" + block.getId().getPath());
+        simpleBlock(block.get(), models().getExistingFile(model));
+        simpleBlockItem(block.get(), models().getExistingFile(model));
     }
 
     public void crop(CropBlock block, String name, IntegerProperty property) {

@@ -65,6 +65,9 @@ public class ModItems {
     public static final RegistryObject<Item> STRAWBERRY_SEEDS = ITEMS.register("strawberry_seeds",
             () -> new ItemNameBlockItem(ModBlocks.STRAWBERRY_CROP.get(), new Item.Properties()));
 
+    public static final RegistryObject<Item> BASEBALL_BAT = ITEMS.register("baseball_bat",
+            () -> new Item(new Item.Properties()));
+
     public static final RegistryObject<Item> A_MOMENT_APART_MUSIC_DISC =
             ITEMS.register("a_moment_apart_music_disc",
                     () -> new RecordItem(15, ModSounds.A_MOMENT_APART, new Item.Properties().stacksTo(1), 234 * 20));
