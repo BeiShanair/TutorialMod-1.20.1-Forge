@@ -3,7 +3,9 @@ package com.besson.tutorial.datagen;
 import com.besson.tutorial.TutorialMod;
 import com.besson.tutorial.block.ModBlocks;
 import com.besson.tutorial.block.custom.CornCrop;
+import com.besson.tutorial.block.custom.SofaBlock;
 import com.besson.tutorial.block.custom.StrawberryCrop;
+import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
@@ -52,6 +54,42 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockWithoutBlockModel(ModBlocks.ORANGE_NIGHTSTAND);
 
         customHorizontalBlock(ModBlocks.SIMPLE_ORANGE_CLOCK);
+
+        sofa(ModBlocks.SOFA, "sofa");
+    }
+
+    private <T extends Block> void sofa(RegistryObject<T> block, String name) {
+        ModelFile modelSingle = models().getExistingFile(modLoc("block/" + name));
+        ModelFile modelLeft = models().getExistingFile(modLoc("block/" + name + "_left"));
+        ModelFile modelRight = models().getExistingFile(modLoc("block/" + name + "_right"));
+        ModelFile modelMiddle = models().getExistingFile(modLoc("block/" + name + "_middle"));
+
+        getVariantBuilder(block.get()).forAllStates(state -> {
+            SofaBlock.Type type = state.getValue(SofaBlock.TYPE);
+            Direction facing = state.getValue(SofaBlock.FACING);
+
+            ModelFile t;
+            switch (type) {
+                case LEFT -> t = modelLeft;
+                case MIDDLE -> t = modelMiddle;
+                case RIGHT -> t = modelRight;
+                default -> t = modelSingle;
+            };
+
+            int yRot;
+            switch (facing) {
+                case EAST -> yRot = 90;
+                case SOUTH -> yRot = 180;
+                case WEST -> yRot = 270;
+                default -> yRot = 0;
+            };
+
+            return ConfiguredModel.builder()
+                    .modelFile(t)
+                    .rotationY(yRot)
+                    .build();
+        });
+        simpleBlockItem(block.get(), modelSingle);
     }
 
     private <T extends Block> void customHorizontalBlock(RegistryObject<T> block) {

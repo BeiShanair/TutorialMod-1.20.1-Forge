@@ -64,6 +64,8 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.BASEBALL_BAT.get());
 
                         pOutput.accept(ModBlocks.SIMPLE_ORANGE_CLOCK.get());
+
+                        pOutput.accept(ModBlocks.SOFA.get());
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> MATERIAL =
