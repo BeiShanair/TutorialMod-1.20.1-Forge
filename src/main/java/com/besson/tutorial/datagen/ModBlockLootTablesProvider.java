@@ -57,6 +57,8 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
                 ModItems.CORN.get(), ModItems.CORN.get(), builder2));
 
         dropSelf(ModBlocks.ORANGE_NIGHTSTAND.get());
+
+        dropSelf(ModBlocks.SIMPLE_ORANGE_CLOCK.get());
     }
     protected LootTable.Builder createCopperOreLikeDrops(Block pBlock, Item item) {
         return createSilkTouchDispatchTable(pBlock,

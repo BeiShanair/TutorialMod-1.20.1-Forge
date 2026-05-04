@@ -50,6 +50,14 @@ public class ModBlockStateProvider extends BlockStateProvider {
         crossCrop(ModBlocks.CORN_CROP.get(), "corn_crop_stage", CornCrop.AGE);
 
         simpleBlockWithoutBlockModel(ModBlocks.ORANGE_NIGHTSTAND);
+
+        customHorizontalBlock(ModBlocks.SIMPLE_ORANGE_CLOCK);
+    }
+
+    private <T extends Block> void customHorizontalBlock(RegistryObject<T> block) {
+        ResourceLocation model = modLoc("block/" + block.getId().getPath());
+        horizontalBlock(block.get(), models().getExistingFile(model));
+        simpleBlockItem(block.get(), models().getExistingFile(model));
     }
 
     private <T extends Block> void simpleBlockWithoutBlockModel(RegistryObject<T> block) {
