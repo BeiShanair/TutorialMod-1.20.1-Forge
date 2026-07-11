@@ -68,6 +68,8 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.SOFA.get());
                         
                         pOutput.accept(ModBlocks.LAMP.get());
+                        
+                        pOutput.accept(ModBlocks.BED.get());
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> MATERIAL =

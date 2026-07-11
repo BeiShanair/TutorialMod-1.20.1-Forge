@@ -58,6 +58,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         sofa(ModBlocks.SOFA, "sofa");
 
         simpleBlockWithoutBlockModel(ModBlocks.LAMP);
+
+        customHorizontalBlock(ModBlocks.BED);
     }
 
     private <T extends Block> void sofa(RegistryObject<T> block, String name) {
