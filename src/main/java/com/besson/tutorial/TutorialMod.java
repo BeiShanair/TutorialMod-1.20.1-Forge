@@ -1,8 +1,10 @@
 package com.besson.tutorial;
 
 import com.besson.tutorial.block.ModBlocks;
+import com.besson.tutorial.entity.ModEntities;
 import com.besson.tutorial.item.ModCreativeModeTabs;
 import com.besson.tutorial.item.ModItems;
+import com.besson.tutorial.renderer.SeatEntityRenderer;
 import com.besson.tutorial.sound.ModSounds;
 import com.besson.tutorial.villager.ModVillagers;
 import com.mojang.logging.LogUtils;
@@ -10,6 +12,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -45,6 +48,8 @@ public class TutorialMod
 
         ModVillagers.register(modEventBus);
         ModSounds.register(modEventBus);
+
+        ModEntities.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -97,6 +102,11 @@ public class TutorialMod
             // Some client setup code
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+        }
+        
+        @SubscribeEvent
+        public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
+            event.registerEntityRenderer(ModEntities.SEAT.get(), SeatEntityRenderer::new);
         }
     }
 }
