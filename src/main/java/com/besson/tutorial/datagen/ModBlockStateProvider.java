@@ -11,11 +11,13 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
+import net.minecraft.world.level.block.PipeBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
+import net.minecraftforge.client.model.generators.MultiPartBlockStateBuilder;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -63,6 +65,25 @@ public class ModBlockStateProvider extends BlockStateProvider {
         customHorizontalBlock(ModBlocks.BED);
         
         pillar(ModBlocks.PILLAR,  "pillar");
+        
+        customFence(ModBlocks.FENCE, "fence");
+    }
+    
+    private <T extends Block> void customFence(RegistryObject<T> block, String name) {
+        ModelFile modelPost = models().getExistingFile(modLoc("block/" + name + "_post"));
+        ModelFile modelSide = models().getExistingFile(modLoc("block/" + name +  "_side"));
+
+        MultiPartBlockStateBuilder builder = getMultipartBuilder(block.get())
+                .part().modelFile(modelPost).addModel().end();
+        PipeBlock.PROPERTY_BY_DIRECTION.entrySet().forEach(e -> {
+            Direction direction = e.getKey();
+            if (direction.getAxis().isHorizontal()) {
+                builder.part().modelFile(modelSide).rotationY(((int) direction.toYRot() + 180) % 360).addModel()
+                        .condition(e.getValue(), true);
+            }
+        });
+        
+        simpleBlockItem(block.get(), models().getExistingFile(modLoc("block/" + name)));
     }
     
     private <T extends Block> void pillar(RegistryObject<T> block, String name) {

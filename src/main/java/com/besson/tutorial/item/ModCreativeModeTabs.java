@@ -72,6 +72,8 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.BED.get());
                         
                         pOutput.accept(ModBlocks.PILLAR.get());
+                        
+                        pOutput.accept(ModBlocks.FENCE.get());
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> MATERIAL =

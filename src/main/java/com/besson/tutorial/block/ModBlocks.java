@@ -80,6 +80,9 @@ public class ModBlocks {
     
     public static final RegistryObject<Block> PILLAR = 
             registerBlock("pillar", () -> new ModPillarBlock(BlockBehaviour.Properties.of().strength(1.0F, 1.0F).noOcclusion()));
+    
+    public static final RegistryObject<Block> FENCE = 
+            registerBlock("fence", () -> new ModFenceBlock(BlockBehaviour.Properties.of().strength(1.0F, 1.0F).noOcclusion()));
 
     private static <T extends Block> void registerBlockItems(String name, RegistryObject<T> block) {
         ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
