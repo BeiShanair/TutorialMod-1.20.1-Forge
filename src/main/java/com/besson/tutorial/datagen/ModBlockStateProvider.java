@@ -56,6 +56,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         customHorizontalBlock(ModBlocks.SIMPLE_ORANGE_CLOCK);
 
         sofa(ModBlocks.SOFA, "sofa");
+
+        simpleBlockWithoutBlockModel(ModBlocks.LAMP);
     }
 
     private <T extends Block> void sofa(RegistryObject<T> block, String name) {

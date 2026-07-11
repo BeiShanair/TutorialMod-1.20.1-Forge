@@ -1,4 +1,4 @@
-// 1.20.1	2026-05-04T13:27:51.2493393	Loot Tables
+// 1.20.1	2026-07-11T10:33:15.9344544	Loot Tables
 049e7d46f6f5ab7f8d5005e39e8a966bf20d655f data/tutorial_mod/loot_tables/blocks/corn_crop.json
 fa539bcef2805fb399e4e7407c54888fa91eb57e data/tutorial_mod/loot_tables/blocks/ice_ether_block.json
 4b779772371fed5bbea086a826a94f0a7f6fce4a data/tutorial_mod/loot_tables/blocks/ice_ether_button.json
@@ -11,6 +11,7 @@ c176d5c6cb704b6968a4eff27d6dafabf10dc782 data/tutorial_mod/loot_tables/blocks/ic
 7306d774509af4c326a9be18ce3bc6e53deace30 data/tutorial_mod/loot_tables/blocks/ice_ether_stairs.json
 54f3d35c0360e6f02bb6a2274d5281dcd67702f0 data/tutorial_mod/loot_tables/blocks/ice_ether_trapdoor.json
 cd8f05934133ec50ac6fb5019f6e263f11c0b074 data/tutorial_mod/loot_tables/blocks/ice_ether_wall.json
+4b546db532e478040e936b0956ae2c8a04e3f185 data/tutorial_mod/loot_tables/blocks/lamp.json
 57d2e88516f0479724d42a0181ae5fc812302657 data/tutorial_mod/loot_tables/blocks/orange_nightstand.json
 cc8eac18b86493813e18f08741cbfa35c42b8508 data/tutorial_mod/loot_tables/blocks/raw_ice_ether_block.json
 4b78d4d8fb04ea94a50da524046fd8cad4914715 data/tutorial_mod/loot_tables/blocks/simple_orange_clock.json
