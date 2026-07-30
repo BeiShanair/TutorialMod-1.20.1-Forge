@@ -86,5 +86,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.PILLAR.get(), "Pillar");
         
         add(ModBlocks.FENCE.get(), "Fence");
+        
+        add(ModItems.SEWAGE_BUCKET.get(), "Sewage Bucket");
+        add(ModBlocks.SEWAGE_BLOCK.get(), "Sewage");
     }
 }

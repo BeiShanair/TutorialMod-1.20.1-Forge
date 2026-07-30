@@ -67,6 +67,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         pillar(ModBlocks.PILLAR,  "pillar");
         
         customFence(ModBlocks.FENCE, "fence");
+        
+        simpleBlockWithoutBlockModel(ModBlocks.SEWAGE_BLOCK);
     }
     
     private <T extends Block> void customFence(RegistryObject<T> block, String name) {

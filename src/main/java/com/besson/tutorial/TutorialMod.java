@@ -2,6 +2,8 @@ package com.besson.tutorial;
 
 import com.besson.tutorial.block.ModBlocks;
 import com.besson.tutorial.entity.ModEntities;
+import com.besson.tutorial.fluid.ModFluidTypes;
+import com.besson.tutorial.fluid.ModFluids;
 import com.besson.tutorial.item.ModCreativeModeTabs;
 import com.besson.tutorial.item.ModItems;
 import com.besson.tutorial.renderer.SeatEntityRenderer;
@@ -9,6 +11,8 @@ import com.besson.tutorial.sound.ModSounds;
 import com.besson.tutorial.villager.ModVillagers;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
@@ -50,6 +54,9 @@ public class TutorialMod
         ModSounds.register(modEventBus);
 
         ModEntities.register(modEventBus);
+
+        ModFluidTypes.register(modEventBus);
+        ModFluids.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -102,6 +109,11 @@ public class TutorialMod
             // Some client setup code
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+            
+            event.enqueueWork(() -> {
+                ItemBlockRenderTypes.setRenderLayer(ModFluids.STILL_SEWAGE.get(), RenderType.translucent());
+                ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_SEWAGE.get(), RenderType.translucent());
+            });
         }
         
         @SubscribeEvent

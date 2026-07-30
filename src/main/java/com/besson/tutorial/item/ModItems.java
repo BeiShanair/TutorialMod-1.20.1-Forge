@@ -2,6 +2,7 @@ package com.besson.tutorial.item;
 
 import com.besson.tutorial.TutorialMod;
 import com.besson.tutorial.block.ModBlocks;
+import com.besson.tutorial.fluid.ModFluids;
 import com.besson.tutorial.item.custom.CustomArmorItem;
 import com.besson.tutorial.item.custom.ModFuelItem;
 import com.besson.tutorial.item.custom.PickaxeAxeItem;
@@ -67,6 +68,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> BASEBALL_BAT = ITEMS.register("baseball_bat",
             () -> new Item(new Item.Properties()));
+    
+    public static final RegistryObject<Item> SEWAGE_BUCKET = ITEMS.register("sewage_bucket",
+            () -> new BucketItem(ModFluids.STILL_SEWAGE, new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> A_MOMENT_APART_MUSIC_DISC =
             ITEMS.register("a_moment_apart_music_disc",
