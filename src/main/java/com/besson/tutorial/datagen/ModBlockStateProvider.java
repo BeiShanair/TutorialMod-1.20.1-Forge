@@ -86,6 +86,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockWithItem(ModBlocks.ICE_ETHER_PLANKS.get(), cubeAll(ModBlocks.ICE_ETHER_PLANKS.get()));
         simpleBlockWithItem(ModBlocks.ICE_ETHER_LEAVES.get(), 
                 models().cubeAll("ice_ether_leaves", modLoc("block/ice_ether_leaves")).renderType("cutout"));
+        
+        simpleBlock(ModBlocks.ICE_ETHER_TREE_SAPLING.get(),
+                models().cross("ice_ether_tree_sapling", modLoc("block/ice_ether_tree_sapling")).renderType("cutout"));
     }
     
     private <T extends Block> void customFence(RegistryObject<T> block, String name) {

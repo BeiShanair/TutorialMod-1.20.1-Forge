@@ -83,6 +83,8 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.STRIPPED_ICE_ETHER_WOOD.get());
                         pOutput.accept(ModBlocks.ICE_ETHER_LEAVES.get());
                         pOutput.accept(ModBlocks.ICE_ETHER_PLANKS.get());
+                        
+                        pOutput.accept(ModBlocks.ICE_ETHER_TREE_SAPLING.get());
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> MATERIAL =

@@ -55,7 +55,16 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.A_MOMENT_APART_MUSIC_DISC.get());
         
         basicItem(ModItems.SEWAGE_BUCKET.get());
+    
+        simpleBlockItem(ModBlocks.ICE_ETHER_TREE_SAPLING);
     }
+    
+    private ItemModelBuilder simpleBlockItem(RegistryObject<Block> block) {
+        return withExistingParent(block.getId().getPath(),
+                mcLoc("item/generated")).texture("layer0",
+                ResourceLocation.fromNamespaceAndPath(TutorialMod.MOD_ID, "block/" + block.getId().getPath()));
+    }
+    
     private <T extends Block> void buttonItem(RegistryObject<T> block, RegistryObject<Block> base) {
         this.withExistingParent(block.getId().getPath(), mcLoc("block/button_inventory"))
                 .texture("texture", ResourceLocation.fromNamespaceAndPath(TutorialMod.MOD_ID,
