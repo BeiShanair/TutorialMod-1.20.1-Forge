@@ -1,6 +1,7 @@
 package com.besson.tutorial.datagen;
 
 import com.besson.tutorial.TutorialMod;
+import com.besson.tutorial.block.ModBlocks;
 import com.besson.tutorial.item.ModItems;
 import com.besson.tutorial.tag.ModItemTags;
 import net.minecraft.core.HolderLookup;
@@ -31,5 +32,15 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                         ModItems.ICE_ETHER_BOOTS.get());
         tag(ItemTags.MUSIC_DISCS)
                 .add(ModItems.A_MOMENT_APART_MUSIC_DISC.get());
+        
+        tag(ItemTags.LOGS_THAT_BURN)
+                .add(ModBlocks.ICE_ETHER_LOG.get().asItem(),
+                        ModBlocks.STRIPPED_ICE_ETHER_LOG.get().asItem(),
+                        ModBlocks.ICE_ETHER_WOOD.get().asItem(),
+                        ModBlocks.STRIPPED_ICE_ETHER_WOOD.get().asItem());
+        tag(ItemTags.LEAVES)
+                .add(ModBlocks.ICE_ETHER_LEAVES.get().asItem());
+        tag(ItemTags.PLANKS)
+                .add(ModBlocks.ICE_ETHER_PLANKS.get().asItem());
     }
 }

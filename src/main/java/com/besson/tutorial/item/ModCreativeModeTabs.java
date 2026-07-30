@@ -76,6 +76,13 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.FENCE.get());
                         
                         pOutput.accept(ModItems.SEWAGE_BUCKET.get());
+                        
+                        pOutput.accept(ModBlocks.ICE_ETHER_LOG.get());
+                        pOutput.accept(ModBlocks.STRIPPED_ICE_ETHER_LOG.get());
+                        pOutput.accept(ModBlocks.ICE_ETHER_WOOD.get());
+                        pOutput.accept(ModBlocks.STRIPPED_ICE_ETHER_WOOD.get());
+                        pOutput.accept(ModBlocks.ICE_ETHER_LEAVES.get());
+                        pOutput.accept(ModBlocks.ICE_ETHER_PLANKS.get());
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> MATERIAL =

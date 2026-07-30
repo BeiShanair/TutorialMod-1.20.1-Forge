@@ -90,6 +90,19 @@ public class ModBlocks {
             () -> new SewageFluidBlock(ModFluids.STILL_SEWAGE, BlockBehaviour.Properties.of()
                     .replaceable().noCollission().strength(100f).liquid()
                     .pushReaction(PushReaction.DESTROY).noLootTable()));
+    
+    public static final RegistryObject<Block> ICE_ETHER_LOG = registerBlock("ice_ether_log",
+            () -> new ModRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)));
+    public static final RegistryObject<Block> ICE_ETHER_WOOD = registerBlock("ice_ether_wood",
+            () -> new ModRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)));
+    public static final RegistryObject<Block> STRIPPED_ICE_ETHER_LOG = registerBlock("stripped_ice_ether_log",
+            () -> new ModRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final RegistryObject<Block> STRIPPED_ICE_ETHER_WOOD = registerBlock("stripped_ice_ether_wood",
+            () -> new ModRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)));
+    public static final RegistryObject<Block> ICE_ETHER_PLANKS = registerBlock("ice_ether_planks",
+            () -> new ModPlanksBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
+    public static final RegistryObject<Block> ICE_ETHER_LEAVES = registerBlock("ice_ether_leaves",
+            () -> new ModLeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
 
     private static <T extends Block> void registerBlockItems(String name, RegistryObject<T> block) {
         ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));

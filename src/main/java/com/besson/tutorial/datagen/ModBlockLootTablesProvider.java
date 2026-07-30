@@ -71,6 +71,13 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.PILLAR.get());
         
         dropSelf(ModBlocks.FENCE.get());
+        
+        dropSelf(ModBlocks.ICE_ETHER_LOG.get());
+        dropSelf(ModBlocks.STRIPPED_ICE_ETHER_LOG.get());
+        dropSelf(ModBlocks.ICE_ETHER_WOOD.get());
+        dropSelf(ModBlocks.STRIPPED_ICE_ETHER_WOOD.get());
+        dropSelf(ModBlocks.ICE_ETHER_PLANKS.get());
+        dropSelf(ModBlocks.ICE_ETHER_LEAVES.get());
     }
     protected LootTable.Builder createCopperOreLikeDrops(Block pBlock, Item item) {
         return createSilkTouchDispatchTable(pBlock,
