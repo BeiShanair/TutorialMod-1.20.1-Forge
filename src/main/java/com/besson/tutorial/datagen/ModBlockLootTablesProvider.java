@@ -82,6 +82,10 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
                 createLeavesDrops(ModBlocks.ICE_ETHER_LEAVES.get(), ModBlocks.ICE_ETHER_TREE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         
         dropSelf(ModBlocks.ICE_ETHER_TREE_SAPLING.get());
+        
+        dropSelf(ModBlocks.SIMPLE_FLOWER.get());
+        add(ModBlocks.POTTED_SIMPLE_FLOWER.get(), 
+                createPotFlowerItemTable(ModBlocks.POTTED_SIMPLE_FLOWER.get()));
     }
     protected LootTable.Builder createCopperOreLikeDrops(Block pBlock, Item item) {
         return createSilkTouchDispatchTable(pBlock,

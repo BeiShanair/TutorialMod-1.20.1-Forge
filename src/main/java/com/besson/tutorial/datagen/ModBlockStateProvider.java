@@ -89,6 +89,15 @@ public class ModBlockStateProvider extends BlockStateProvider {
         
         simpleBlock(ModBlocks.ICE_ETHER_TREE_SAPLING.get(),
                 models().cross("ice_ether_tree_sapling", modLoc("block/ice_ether_tree_sapling")).renderType("cutout"));
+        
+        simpleBlock(ModBlocks.SIMPLE_FLOWER.get(),
+                models().cross("simple_flower", modLoc("block/simple_flower")).renderType("cutout"));
+        pottedFlower(ModBlocks.POTTED_SIMPLE_FLOWER, "simple_flower");
+    }
+    
+    private <T extends Block> void pottedFlower(RegistryObject<T> block, String name) {
+        simpleBlock(block.get(), models().withExistingParent(block.getId().getPath(), mcLoc("block/flower_pot_cross"))
+                .texture("plant", modLoc("block/" + name)).renderType("cutout"));
     }
     
     private <T extends Block> void customFence(RegistryObject<T> block, String name) {

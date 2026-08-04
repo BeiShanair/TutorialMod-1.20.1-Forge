@@ -6,6 +6,7 @@ import com.besson.tutorial.fluid.ModFluids;
 import com.besson.tutorial.item.ModItems;
 import com.besson.tutorial.sound.ModSounds;
 import com.besson.tutorial.worldgen.tree.IceEtherTreeGrower;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
@@ -107,6 +108,11 @@ public class ModBlocks {
     
     public static final RegistryObject<Block> ICE_ETHER_TREE_SAPLING = registerBlock("ice_ether_tree_sapling",
             () -> new SaplingBlock(new IceEtherTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+    
+    public static final RegistryObject<Block> SIMPLE_FLOWER = registerBlock("simple_flower",
+            () -> new FlowerBlock(() -> MobEffects.NIGHT_VISION, 4 * 20, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_SIMPLE_FLOWER = BLOCKS.register("potted_simple_flower",
+            () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, SIMPLE_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
 
     private static <T extends Block> void registerBlockItems(String name, RegistryObject<T> block) {
         ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));

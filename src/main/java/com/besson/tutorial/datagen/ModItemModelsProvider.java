@@ -57,10 +57,12 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.SEWAGE_BUCKET.get());
     
         simpleBlockItem(ModBlocks.ICE_ETHER_TREE_SAPLING);
+        
+        simpleBlockItem(ModBlocks.SIMPLE_FLOWER);
     }
     
-    private ItemModelBuilder simpleBlockItem(RegistryObject<Block> block) {
-        return withExistingParent(block.getId().getPath(),
+    private void simpleBlockItem(RegistryObject<Block> block) {
+        withExistingParent(block.getId().getPath(),
                 mcLoc("item/generated")).texture("layer0",
                 ResourceLocation.fromNamespaceAndPath(TutorialMod.MOD_ID, "block/" + block.getId().getPath()));
     }
