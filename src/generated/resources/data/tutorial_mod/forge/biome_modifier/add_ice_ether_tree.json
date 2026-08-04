@@ -1,0 +1,9 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "minecraft:plains",
+    "minecraft:forest"
+  ],
+  "features": "tutorial_mod:ice_ether_tree_placed",
+  "step": "vegetal_decoration"
+}
