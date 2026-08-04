@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#forge:is_plains",
+  "features": "tutorial_mod:simple_flower_placed",
+  "step": "vegetal_decoration"
+}

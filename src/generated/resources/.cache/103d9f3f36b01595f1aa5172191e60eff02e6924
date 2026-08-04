@@ -1,4 +1,7 @@
-// 1.20.1	2026-08-04T11:46:35.250847	Registries
+// 1.20.1	2026-08-04T13:09:00.6246496	Registries
 626955a593063988eeda0c8a90cc0d8414858d67 data/tutorial_mod/forge/biome_modifier/add_ice_ether_tree.json
+cd441be9796903961550db0885948e641120a503 data/tutorial_mod/forge/biome_modifier/add_simple_flower.json
 fffd07c9a51df8d7a20a696f92a369e65340ac76 data/tutorial_mod/worldgen/configured_feature/ice_ether_tree.json
+eb85f3605fa752d150a3dc581f48791077bd9bfd data/tutorial_mod/worldgen/configured_feature/simple_flower.json
 d288d56943e2182c687111fd5ebc8c551066d563 data/tutorial_mod/worldgen/placed_feature/ice_ether_tree_placed.json
+6dd3d74d3049e936963078b3284707951a02da79 data/tutorial_mod/worldgen/placed_feature/simple_flower_placed.json
