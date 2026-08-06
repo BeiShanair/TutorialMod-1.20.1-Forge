@@ -87,6 +87,9 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.ICE_ETHER_TREE_SAPLING.get());
                         
                         pOutput.accept(ModBlocks.SIMPLE_FLOWER.get());
+                        
+                        pOutput.accept(ModItems.ICE_ETHER_SIGN.get());
+                        pOutput.accept(ModItems.ICE_ETHER_HANGING_SIGN.get());
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> MATERIAL =

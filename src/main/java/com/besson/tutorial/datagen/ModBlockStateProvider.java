@@ -9,10 +9,7 @@ import com.besson.tutorial.block.custom.StrawberryCrop;
 import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.CropBlock;
-import net.minecraft.world.level.block.PipeBlock;
-import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
@@ -20,6 +17,7 @@ import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.client.model.generators.MultiPartBlockStateBuilder;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Function;
@@ -93,6 +91,17 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlock(ModBlocks.SIMPLE_FLOWER.get(),
                 models().cross("simple_flower", modLoc("block/simple_flower")).renderType("cutout"));
         pottedFlower(ModBlocks.POTTED_SIMPLE_FLOWER, "simple_flower");
+    
+        signBlock((StandingSignBlock) ModBlocks.ICE_ETHER_SIGN.get(), (WallSignBlock) ModBlocks.ICE_ETHER_WALL_SIGN.get(),
+                blockTexture(ModBlocks.ICE_ETHER_PLANKS.get()));
+        hangingSignBlock(ModBlocks.ICE_ETHER_HANGING_SIGN.get(), ModBlocks.ICE_ETHER_WALL_HANGING_SIGN.get(),
+                blockTexture(ModBlocks.ICE_ETHER_PLANKS.get()));
+    }
+    
+    private void hangingSignBlock(Block signBlock, Block wallSignBlock, ResourceLocation texture) {
+        ModelFile sign = models().sign(ForgeRegistries.BLOCKS.getKey(signBlock).getPath(), texture);
+        simpleBlock(signBlock, sign);
+        simpleBlock(wallSignBlock, sign);
     }
     
     private <T extends Block> void pottedFlower(RegistryObject<T> block, String name) {

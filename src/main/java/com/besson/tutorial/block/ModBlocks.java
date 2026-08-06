@@ -113,6 +113,16 @@ public class ModBlocks {
             () -> new FlowerBlock(() -> MobEffects.NIGHT_VISION, 4 * 20, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
     public static final RegistryObject<Block> POTTED_SIMPLE_FLOWER = BLOCKS.register("potted_simple_flower",
             () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, SIMPLE_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    
+    public static final WoodType ICE_ETHER_WOOD_TYPE = WoodType.register(new WoodType(TutorialMod.MOD_ID + ":ice_ether", BlockSetType.OAK));
+    public static final RegistryObject<Block> ICE_ETHER_SIGN = BLOCKS.register("ice_ether_sign",
+            () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ICE_ETHER_WOOD_TYPE));
+    public static final RegistryObject<Block> ICE_ETHER_WALL_SIGN = BLOCKS.register("ice_ether_wall_sign",
+            () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ICE_ETHER_WOOD_TYPE));
+    public static final RegistryObject<Block> ICE_ETHER_HANGING_SIGN = BLOCKS.register("ice_ether_hanging_sign",
+            () -> new ModHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN), ICE_ETHER_WOOD_TYPE));
+    public static final RegistryObject<Block> ICE_ETHER_WALL_HANGING_SIGN = BLOCKS.register("ice_ether_wall_hanging_sign",
+            () -> new ModWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN), ICE_ETHER_WOOD_TYPE));
 
     private static <T extends Block> void registerBlockItems(String name, RegistryObject<T> block) {
         ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));

@@ -80,6 +80,7 @@ minecraft {
                     source sourceSets.main
                 }
             }
+            property("terminal.jline", "true")
         }
 
         client {

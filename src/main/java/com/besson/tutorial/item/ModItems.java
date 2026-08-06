@@ -71,6 +71,12 @@ public class ModItems {
     
     public static final RegistryObject<Item> SEWAGE_BUCKET = ITEMS.register("sewage_bucket",
             () -> new BucketItem(ModFluids.STILL_SEWAGE, new Item.Properties().stacksTo(1)));
+    
+    public static final RegistryObject<Item> ICE_ETHER_SIGN = ITEMS.register("ice_ether_sign",
+            () -> new SignItem(new Item.Properties().stacksTo(16), ModBlocks.ICE_ETHER_SIGN.get(), ModBlocks.ICE_ETHER_WALL_SIGN.get()));
+    public static final RegistryObject<Item> ICE_ETHER_HANGING_SIGN = ITEMS.register("ice_ether_hanging_sign",
+            () -> new HangingSignItem(ModBlocks.ICE_ETHER_HANGING_SIGN.get(), ModBlocks.ICE_ETHER_WALL_HANGING_SIGN.get(),
+                    new Item.Properties().stacksTo(16)));
 
     public static final RegistryObject<Item> A_MOMENT_APART_MUSIC_DISC =
             ITEMS.register("a_moment_apart_music_disc",

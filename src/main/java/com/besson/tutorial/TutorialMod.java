@@ -1,6 +1,7 @@
 package com.besson.tutorial;
 
 import com.besson.tutorial.block.ModBlocks;
+import com.besson.tutorial.blockEntity.ModBlockEntities;
 import com.besson.tutorial.entity.ModEntities;
 import com.besson.tutorial.fluid.ModFluidTypes;
 import com.besson.tutorial.fluid.ModFluids;
@@ -13,6 +14,9 @@ import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.Sheets;
+import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
+import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
@@ -58,6 +62,8 @@ public class TutorialMod
 
         ModFluidTypes.register(modEventBus);
         ModFluids.register(modEventBus);
+
+        ModBlockEntities.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -119,11 +125,16 @@ public class TutorialMod
                 ItemBlockRenderTypes.setRenderLayer(ModFluids.STILL_SEWAGE.get(), RenderType.translucent());
                 ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_SEWAGE.get(), RenderType.translucent());
             });
+
+            Sheets.addWoodType(ModBlocks.ICE_ETHER_WOOD_TYPE);
         }
         
         @SubscribeEvent
         public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
             event.registerEntityRenderer(ModEntities.SEAT.get(), SeatEntityRenderer::new);
+            
+            event.registerBlockEntityRenderer(ModBlockEntities.MOD_SIGN.get(), SignRenderer::new);
+            event.registerBlockEntityRenderer(ModBlockEntities.MOD_HANGING_SIGN.get(), HangingSignRenderer::new);
         }
     }
 }
